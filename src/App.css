@@ -1,0 +1,15 @@
+#root {
+  text-align: center;
+}
+
+.colors-container {
+  height: 100vh;
+  min-width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+.color {
+  flex-grow: 1;
+  background-color: blue;
+}
