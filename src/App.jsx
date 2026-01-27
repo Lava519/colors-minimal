@@ -40,7 +40,7 @@ function App() {
   }
  
   const genColor = () => {
-    return `#${genHEX()}${genHEX()}${genHEX()}${genHEX()}${genHEX()}${genHEX()}`
+    return `#${genHEX()}${genHEX()}${genHEX()}${genHEX()}${genHEX()}${genHEX()}`;
   }
 
   return (

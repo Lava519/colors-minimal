@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.invert-text {
+  color: #000!important;
+}
+
 .colors-container {
   height: 100vh;
   min-width: 100%;
