@@ -9,7 +9,6 @@ function App() {
 
   
   const handleKeyPress = (e) => {
-    console.log(e.key);
     if (e.key == ' ') {
       setChange(true)
     }
