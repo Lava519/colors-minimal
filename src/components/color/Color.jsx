@@ -3,14 +3,18 @@ import {useEffect, useState} from 'react';
 export default function Color({color}) {
   const INVERT = 350;
   const [invert, setInvert] = useState(false);
+
   const hex2rgb = (hex) => {
-    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-      return {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
+    const r = hex.slice(1, 3);
+    const g = hex.slice(3, 5);
+    const b = hex.slice(5);
+    return {
+      r: parseInt(r, 16),
+      g: parseInt(g, 16),
+      b: parseInt(b, 16)
     };
   }
+
   const rgb2hsl = (rgb) => {
     let r = rgb.r / 255;
     let b = rgb.b / 255;
@@ -49,7 +53,6 @@ export default function Color({color}) {
     }
   }, [color])
   
-
   return (
     <div style={{"backgroundColor": color}} className={`color ${invert ? "invert-text" : ""}`}>
       <h2>{color}</h2>
