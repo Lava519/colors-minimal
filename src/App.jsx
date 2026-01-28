@@ -28,7 +28,6 @@ function App() {
   }, [change])
 
   const resetColors = (e) => {
-    console.log(e.key);
     if (e.key == " ")
       setChange(true);
   }
