@@ -14,9 +14,55 @@
 }
 
 .color {
+  position: relative;
   flex-grow: 1;
   background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.2s;
 }
+
+.color > h2 {
+  width: 105px;
+}
+
+.border {
+  width: 60px;
+  height: 100vh;
+  position: absolute;
+  left: -30px;
+  z-index: 10;
+}
+
+.plus {
+  position: absolute;
+  height: 100vh;
+  width: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus > div > div:hover {
+  scale: 1.2;
+  cursor: pointer;
+  transition: scale 0.2s;
+}
+
+.plus > div {
+  background-color: #FFF;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus > div > h2 {
+  color: #000;
+}
+

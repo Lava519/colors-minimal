@@ -1,9 +1,16 @@
 import {useEffect, useState} from 'react';
+import {hex2rgb} from '../../ColorConversion.js'
+import Border from '../border/Border.jsx'
+import Plus from '../plus/Plus.jsx';
 
-export default function Color({color, hex2rgb}) {
+export default function Color({color, index}) {
   const INVERT = 350;
   const [invert, setInvert] = useState(false);
-
+  const [visible, setVisible] = useState(false);
+  const handleSetVisible = (value) => {
+    console.log(value);
+    setVisible(value);
+  }
   useEffect(() => {
     let rgb = hex2rgb(color);
       if ((rgb.b + rgb.g + rgb.r) > INVERT) 
@@ -15,6 +22,8 @@ export default function Color({color, hex2rgb}) {
   
   return (
     <div style={{"backgroundColor": color}} className={`color ${invert ? "invert-text" : ""}`}>
+      <Border setVisible={handleSetVisible} position={"left"}></Border>
+      {(index != 0 && visible) && <Plus index="index"></Plus>}
       <h2>{color}</h2>
     </div>
   )
