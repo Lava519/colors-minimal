@@ -22,6 +22,15 @@ function App() {
     setColorsNumber(colorsNumber+1)
   }
 
+  const removeColor = (index) => {
+    if (colorsNumber > 2) {
+      let tmp = [...colors];
+      tmp.splice(index, 1);
+      setColors(tmp);
+      setColorsNumber(colorsNumber-1)
+    }
+  }
+
   useEffect(() => {
     document.addEventListener('keyup', resetColors, true);
   }, [])
@@ -54,7 +63,7 @@ function App() {
       <div className="colors-container">
         {colors && colors.map((item, index) => {
           return (
-            <Color colorsNumber={colorsNumber} insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
+            <Color colorsNumber={colorsNumber} remove={removeColor} insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
           )
         })}
       </div>

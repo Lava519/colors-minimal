@@ -23,8 +23,11 @@
   transition: background-color 1s;
 }
 
-.color > h2 {
+.value-container {
   width: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .border {
@@ -48,8 +51,6 @@
 .plus > div:hover {
   scale: 1.2;
   cursor: pointer;
-  scale: 1.1;
-  transition: scale 0.2s;
 }
 
 .plus > div {
@@ -63,10 +64,34 @@
   align-items: center;
   z-index: 10;
   cursor: pointer;
+  transition: scale 0.2s;
 }
 
 .plus > div > img {
   width: 20px;
+}
+
+.minus {
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #FFF;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+  transition: scale 0.2s, opacity 0.2s;
+}
+
+.minus > img {
+  width: 20px;
+}
+
+.minus:hover {
+  scale: 1.2;
+  cursor: pointer;
+  opacity: 1;
 }
 
 @media (max-width: 1300px) {
