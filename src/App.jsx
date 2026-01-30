@@ -15,6 +15,12 @@ function App() {
     }
   }
 
+  const insertColor = (index) => {
+    let tmp = [...colors];
+    tmp.splice(index, 0, genColor());
+    setColors(tmp);
+  }
+
   useEffect(() => {
     document.addEventListener('keyup', resetColors, true);
   }, [])
@@ -47,7 +53,7 @@ function App() {
       <div className="colors-container">
         {colors && colors.map((item, index) => {
           return (
-            <Color color={item} index={index} key={index}></Color>
+            <Color insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
           )
         })}
       </div>

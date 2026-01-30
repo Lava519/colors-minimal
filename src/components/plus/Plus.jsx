@@ -1,7 +1,7 @@
-export default function Plus({index}) {
+export default function Plus({index, setVisible, insert}) {
   return (
     <div className="plus">
-      <div><h2>+</h2></div>
+      <div onMouseOver={e => setVisible(true)} onMouseOut={e => setVisible(false)} onClick={e => insert(index)}><img src="plus.svg" alt="+"/></div>
     </div>  
   ) 
 }
