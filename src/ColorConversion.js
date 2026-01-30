@@ -76,3 +76,12 @@ export  const hex2rgb = (hex) => {
       b: parseInt(b, 16)
     };
   }
+
+export const colorBlendHEX = (color1, color2) => {
+  const {r: r1, g: g1, b: b1} = hex2rgb(color1);
+  const {r: r2, g: g2, b: b2} = hex2rgb(color2);
+  const r = Math.round(r1 * 0.5 + r2 * 0.5)
+  const g = Math.round(g1 * 0.5 + g2 * 0.5)
+  const b = Math.round(b1 * 0.5 + b2 * 0.5)
+  return `#${r.toString(16)}${r.toString(16)}${b.toString(16)}`.toUpperCase();
+}

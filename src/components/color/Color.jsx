@@ -3,7 +3,7 @@ import {hex2rgb} from '../../ColorConversion.js'
 import Border from '../border/Border.jsx'
 import Plus from '../plus/Plus.jsx';
 
-export default function Color({color, index, insert}) {
+export default function Color({color, index, insert, colorsNumber}) {
   const INVERT = 350;
   const [invert, setInvert] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -30,7 +30,7 @@ export default function Color({color, index, insert}) {
   return (
     <div style={{"backgroundColor": color}} className={`color ${invert ? "invert-text" : ""}`}>
       <Border setVisible={handleSetVisible} position={"left"}></Border>
-      {(index != 0 && visible) && <Plus insert={insert} index={index} setVisible={handleSetHover}></Plus>}
+      {(colorsNumber < 10) && (index != 0 && visible) && <Plus insert={insert} index={index} setVisible={handleSetHover}></Plus>}
       <h2>{color}</h2>
     </div>
   )

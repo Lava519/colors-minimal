@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css'
-import { hex2rgb, rgb2hsl, hsl2rgb} from './ColorConversion.js';
+import { hex2rgb, rgb2hsl, hsl2rgb, colorBlendHEX} from './ColorConversion.js';
 import Color from "./components/color/Color.jsx"
 
 function App() {
-  const [colorsNumber, setColorsNumbers] = useState(5);
+  const [colorsNumber, setColorsNumber] = useState(5);
   const [colors, setColors] = useState(null);
   const [change, setChange] = useState(false);
 
@@ -17,8 +17,9 @@ function App() {
 
   const insertColor = (index) => {
     let tmp = [...colors];
-    tmp.splice(index, 0, genColor());
+    tmp.splice(index, 0, colorBlendHEX(colors[index - 1], colors[index]));
     setColors(tmp);
+    setColorsNumber(colorsNumber+1)
   }
 
   useEffect(() => {
@@ -53,7 +54,7 @@ function App() {
       <div className="colors-container">
         {colors && colors.map((item, index) => {
           return (
-            <Color insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
+            <Color colorsNumber={colorsNumber} insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
           )
         })}
       </div>
