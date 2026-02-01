@@ -7,7 +7,7 @@ function App() {
   const [colorsNumber, setColorsNumber] = useState(5);
   const [colors, setColors] = useState(null);
   const [change, setChange] = useState(false);
-
+  const [textSize, setTextSize] = useState("1rem");
 
   const handleKeyPress = (e) => {
     if (e.key == ' ') {
@@ -49,6 +49,10 @@ function App() {
       setChange(true);
   }
 
+  useEffect(() => {
+    setTextSize(`${Math.max(2.0 - colorsNumber * 0.2, 0.7)}rem`);
+  }, [colorsNumber])
+  
   const genHEX = () => {
     const HEX = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
     return HEX[Math.floor(Math.random() * HEX.length)];
@@ -63,7 +67,7 @@ function App() {
       <div className="colors-container">
         {colors && colors.map((item, index) => {
           return (
-            <Color colorsNumber={colorsNumber} remove={removeColor} insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
+            <Color textSize={textSize} colorsNumber={colorsNumber} remove={removeColor} insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
           )
         })}
       </div>
