@@ -1,12 +1,12 @@
 import {hex2rgb, rgb2hsl} from "../../ColorConversion.js";
 
-export default function Value({color, remove, index}) {
+export default function Value({popup, color, remove, index}) {
   const rgb = hex2rgb(color);
   const hsl = rgb2hsl(rgb);
 
   const copyClipboard = (col) => {
     navigator.clipboard.writeText(col);
-    alert("Copied Text");
+    popup();
   }
 
   return (
