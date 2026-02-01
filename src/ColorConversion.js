@@ -12,7 +12,6 @@ const hue2rgb = (p, q, t) => {
     return p;
   }
 export  const hsl2rgb = (hsl) => {
-    console.log(hsl);
     const h = hsl.h;
     const l = hsl.l/100;
     const s = hsl.s/100;
@@ -43,7 +42,7 @@ export  const rgb2hsl = (rgb) => {
     let h, s, l;
     l = (max + min) / 2;
     if (c === 0)
-      h = 0;
+      h = s = 0;
     else {
         s = l > 0.5 ? c / (2 - max - min) : c / (max + min);
         switch (max) {

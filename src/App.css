@@ -125,7 +125,7 @@
   text-align: center;
   border-radius: 1.2em;
   font-size: 1.2rem;
-  padding: 0.2em 0;
+  padding: 4px 0;
   width: 150px;
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
@@ -133,6 +133,8 @@
 
 input:focus {
   outline: none;
+  width: 158px;
+  height: 25px;
   border: solid #FFF 1px;
 }
 

@@ -49,6 +49,12 @@ function App() {
       setChange(true);
   }
 
+  const changeColor = (index, col) => {
+    let tmp = [...colors];
+    tmp[index] = col;
+    setColors(tmp);
+  }
+
   useEffect(() => {
     setTextSize(`${Math.max(2.0 - colorsNumber * 0.2, 0.7)}rem`);
   }, [colorsNumber])
@@ -67,7 +73,16 @@ function App() {
       <div className="colors-container">
         {colors && colors.map((item, index) => {
           return (
-            <Color textSize={textSize} colorsNumber={colorsNumber} remove={removeColor} insert={insertColor} color={item} index={index} key={`${index}${item}}`}></Color>
+            <Color
+              changeColor={changeColor}
+              textSize={textSize}
+              colorsNumber={colorsNumber}
+              remove={removeColor}
+              insert={insertColor}
+              color={item}
+              index={index}
+              key={`${index}${item}}`}
+            ></Color>
           )
         })}
       </div>
