@@ -14,9 +14,7 @@ export default function Color({textSize ,color, index, remove, insert, colorsNum
   
   const handleSetHover = (value) => {
     setHover(value);
-    if (!value) {
-      handleSetVisible(value);
-    }
+    setVisible(value);
   }
 
   const displayPopUp = () => {
