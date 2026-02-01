@@ -24,10 +24,23 @@
 }
 
 .value-container {
-  width: 105px;
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.value {
+  cursor: pointer;
+  padding: 0.1em 0.8em;
+  margin: 0.4em 0;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: scale 0.2s;
+}
+
+.value:hover {
+  scale: 1.2;
 }
 
 .border {
@@ -100,7 +113,7 @@
   }
   .border {
     height: 60px;
-    width: 100vw;
+    width: 100vw 
     left: 0;
     top: -30px;
   }
