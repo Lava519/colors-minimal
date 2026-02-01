@@ -115,6 +115,27 @@
   animation: 1s ease-out clipboard;
 }
 
+.input-container {
+  position: absolute;
+  top: 20px;
+}
+
+.input {
+  color: #FFF;
+  text-align: center;
+  border-radius: 1.2em;
+  font-size: 1.2rem;
+  padding: 0.2em 0;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border: solid #FFF 1px;
+}
+
 @keyframes clipboard {
   0% {
     opacity: 0;
@@ -174,6 +195,10 @@
   .value {
     font-size: 1.5rem;
   }
+
+  .input-container {
+    top: 5px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -186,5 +211,8 @@
   }
   .color {
     min-height: 300px;
+  }
+  .input-container {
+    top: 5px;
   }
 }

@@ -4,6 +4,7 @@ import Border from '../border/Border.jsx'
 import Plus from '../plus/Plus.jsx';
 import Value from '../value/Value.jsx';
 import PopUp from '../popup/PopUp.jsx';
+import Input from '../input/Input.jsx';
 
 export default function Color({textSize ,color, index, remove, insert, colorsNumber}) {
   const INVERT = 350;
@@ -43,6 +44,7 @@ export default function Color({textSize ,color, index, remove, insert, colorsNum
   return (
     <div style={{"backgroundColor": color, "fontSize": textSize}} className={`color ${invert ? "invert-text" : ""}`}>
       <Border setVisible={handleSetVisible} position={"left"}></Border>
+      <Input invert={invert} color={color}></Input>
       {(colorsNumber < 10) && (index != 0 && visible) && <Plus insert={insert} index={index} setVisible={handleSetHover}></Plus>}
       <Value popup={displayPopUp} index={index} remove={remove} color={color}></Value>
       {popup && <PopUp></PopUp>}
