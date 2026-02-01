@@ -109,11 +109,15 @@
 
 @media (max-width: 1300px) {
   .colors-container {
+    justify-content: flex-start;
     flex-direction: column;
+  }
+  .color {
+    min-height: 200px;
   }
   .border {
     height: 60px;
-    width: 100vw 
+    width: 100vw;
     left: 0;
     top: -30px;
   }
@@ -122,5 +126,33 @@
     width: 100%;
     top: 0;
     left: 0;
+  }
+
+  .value-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: auto;
+  }
+
+  .value {
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+  }
+  
+  .minus {
+    margin: 0 auto;
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 850px) {
+  .value-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .color {
+    min-height: 300px;
   }
 }
