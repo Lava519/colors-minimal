@@ -51,7 +51,7 @@ export default function Color({changeColor, textSize ,color, index, remove, inse
       <Border setVisible={handleSetVisible} position={"left"}></Border>
       <Input changeColor={handleColorChange} invert={invert} color={color}></Input>
       {(colorsNumber < 10) && (index != 0 && visible) && <Plus insert={insert} index={index} setVisible={handleSetHover}></Plus>}
-      <Value index={index} popup={displayPopUp} index={index} remove={remove} color={color}></Value>
+      <Value index={index} popup={displayPopUp} remove={remove} color={color}></Value>
       {popup && <PopUp></PopUp>}
     </div>
   )
